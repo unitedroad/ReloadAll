@@ -1,0 +1,10 @@
+<!-- ***** BEGIN LICENSE BLOCK ***** -  Reload All! Mozilla Firefox Addon - This is the addon popup DTD file for ZH-CN locale -   -  Copyright (C) 2009  Dhruwat Bhagat <unitedronaldo@yahoo.com> - - -  This program is free software; you can redistribute it and/or modify -  it under the terms of the GNU General Public License as published by -  the Free Software Foundation; either version 2 of the License, or -  (at your option) any later version. - -  This program is distributed in the hope that it will be useful, -  but WITHOUT ANY WARRANTY; without even the implied warranty of -  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the -  GNU General Public License for more details. - -  You should have received a copy of the GNU General Public License -  along with this program; if not, write to the Free Software -  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA - ***** END LICENSE BLOCK ***** -->
+<!ENTITY title "Reload All! - 选择标签页">
+<!ENTITY reloadallexclam "重新载入所有！">
+<!ENTITY selectall "选择所有">
+<!ENTITY invertselection "反向选择">
+<!ENTITY checkselitems "选中选定项目">
+<!ENTITY uncheckselitems "取消选定项目">
+<!ENTITY toggleselitems "切换选定项目">
+<!ENTITY url "网址">
+<!ENTITY description "描述">

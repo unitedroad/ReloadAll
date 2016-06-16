@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+
+Name: install.rdf
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: SmauTyMJpwYRzFiT4faFnQ==
+SHA1-Digest: VESUPH0aIoLGHUK3qgVef8DJXgY=
+
+Name: chrome.manifest
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: /wZ0AxT1bxh5XohEf8+m8Q==
+SHA1-Digest: fi3o9wcR9fVH/Y8iWxLCnWtBthc=
+
+Name: chrome/chrome.jar
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: iXKSVv2j3pM84JeJlU7xlA==
+SHA1-Digest: XdpqnUyoi1RLuQ620p8FeTYcQxg=
+
+Name: defaults/preferences/reloadall.js
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: sRiajeVsmlhjqWPXOKL9lQ==
+SHA1-Digest: MwIKIbblFS7ivoH4mDLNnjHlCck=
+
+Name: GPL
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: /a/Gkapft/jiqelSH+93Gw==
+SHA1-Digest: HkktDXw+pcQm0470ZxX7bjD5mI4=
+
+Name: LICENSE
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: im7WUaFyLDq7+Y4BoVr9iw==
+SHA1-Digest: BoLK0d+oT2Bo9JFERJippWt6gno=
+

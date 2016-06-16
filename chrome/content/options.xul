@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- ***** BEGIN LICENSE BLOCK *****
+ -  Reload All! Mozilla Firefox Addon - This is the core addon XUL file
+ -  
+ -  Copyright (C) 2009  Dhruwat Bhagat <unitedronaldo@yahoo.com>
+ -
+ -
+ -  This program is free software; you can redistribute it and/or modify
+ -  it under the terms of the GNU General Public License as published by
+ -  the Free Software Foundation; either version 2 of the License, or
+ -  (at your option) any later version.
+ -
+ -  This program is distributed in the hope that it will be useful,
+ -  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ -  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ -  GNU General Public License for more details.
+ -
+ -  You should have received a copy of the GNU General Public License
+ -  along with this program; if not, write to the Free Software
+ -  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ - ***** END LICENSE BLOCK ***** -->
+ <?xml-stylesheet href="chrome://global/skin" type="text/css"?>
+<?xml-stylesheet href="chrome://reloadall/skin/options.css" type="text/css" ?>
+<!DOCTYPE overlay SYSTEM "chrome://reloadall/locale/options.dtd">
+<dialog id="options" title="&reloadallexclam; - &changesettings;"   
+	flex="1"   buttons="cancel,accept"   defaultButton="accept" width="550" height="500" 
+	onload="optionsmethods.load();" ondialogaccept="return optionsmethods.save()"  ondialogcancel="" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<script type="application/javascript" src="chrome://reloadall/content/options.js" />
+<tabbox class="options-tabbox" id="options-tabbox">
+<tabs>
+<tab id="shortcutkeys-tab" label="&shortcuts;" />
+<tab id="appearance-tab" label="&appearance;" />
+</tabs>
+<tabpanels>
+<tabpanel id="shortcuts-tabpanel">
+        <groupbox id="shortcuts-groupbox">
+	<caption label="&shortcuts-title;"/>
+	        <configwrapper name="shortcuts-config">
+	<grid>
+	
+	<columns>
+	<column flex="50"/>
+	<column flex="49" />
+	<column flex="1" />
+	</columns>
+	<rows>
+	                    <row align="center">
+						<label class="shortcuts-label-first" value="&reloadalltabs;" />
+						<label class="shortcuts-label-second" value="&keymodifier;" />
+						<textbox id="reloadalltabs" class="shortcuts-textbox" maxlength="1"/>
+						</row>
+						<row align="center">
+						<label class="shortcuts-label-first" value="&reloadallapptabs;" />
+						<label class="shortcuts-label-second" value="&keymodifier;" />
+						<textbox id="reloadallapptabs" class="shortcuts-textbox" maxlength="1"/>
+						</row>
+	                    <row align="center">
+						<label class="shortcuts-label-first" value="&selectionpopup;" />
+						<label class="shortcuts-label-second" value="&keymodifier;" />
+						<textbox id="selectionpopup" class="shortcuts-textbox" maxlength="1"/>
+						</row>
+						<row align="center">
+						<label class="shortcuts-label-first" value="&reloadprevious;" />
+						<label class="shortcuts-label-second" value="&keymodifier;" />
+						<textbox id="reloadallsaved" class="shortcuts-textbox" maxlength="1"/>
+						</row>
+						<row align="center">
+						<label class="shortcuts-label-first" value="&stopalltabs;" />
+						<label class="shortcuts-label-second" value="&keymodifier;" />
+						<textbox id="stopall" class="shortcuts-textbox" maxlength="1"/>
+						</row>
+						</rows>			
+
+	</grid>
+												</configwrapper>
+	</groupbox>
+</tabpanel>
+<tabpanel id="appearance-tabpanel">
+<groupbox id="appearance-groupbox">
+<caption label="&appearance-title;"/>
+<configwrapper name="shortcuts-config">
+	<grid>
+	
+	<columns>
+	<column flex="50"/>
+	<column flex="49" />
+	<column flex="1" />
+	</columns>
+		<rows>
+<row align="center">
+						<checkbox id="appearance-checkbox-contextmenu" label="&addtotabcontextmenu2;" onclick="optionsmethods.allTabContextMenuOptionClicked()" style="width: 450px"/>
+						</row>
+						<row align="center">
+						<checkbox id="reloadallapptabs-appearance-checkbox-contextmenu" label="&addreloadallapptabstotabcontextmenu;" onclick="optionsmethods.nonAllTabContextMenuOptionClicked(event);" style="width: 450px"/>
+						</row>
+						<row align="center">
+						<checkbox id="selectionpopup-appearance-checkbox-contextmenu" label="&addselectionpopuptotabcontextmenu;" onclick="optionsmethods.nonAllTabContextMenuOptionClicked(event);" style="width: 450px"/>
+						</row>
+						<row align="center">
+						<checkbox id="stopall-appearance-checkbox-contextmenu" label="&addstopalltotabcontextmenu;" onclick="optionsmethods.nonAllTabContextMenuOptionClicked(event);" style="width: 450px"/>
+						</row>
+						<row align="center">
+						<checkbox id="reloadallsaved-appearance-checkbox-contextmenu" label="&addreloadallsavedtotabcontextmenu;" onclick="optionsmethods.nonAllTabContextMenuOptionClicked(event);" style="width: 450px"/>
+						</row>	
+						</rows>			
+
+	</grid>
+								</configwrapper>
+</groupbox>
+</tabpanel>
+</tabpanels>
+</tabbox>
+</dialog>

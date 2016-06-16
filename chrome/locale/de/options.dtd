@@ -1,0 +1,19 @@
+<!-- ***** BEGIN LICENSE BLOCK ***** -  Reload All! Mozilla Firefox Addon - This is the addon popup DTD file for DE locale -   -  Copyright (C) 2011  Andreas Kleinert <Wawuschel@erweiterungen.de> - - -  This program is free software; you can redistribute it and/or modify -  it under the terms of the GNU General Public License as published by -  the Free Software Foundation; either version 2 of the License, or -  (at your option) any later version. - -  This program is distributed in the hope that it will be useful, -  but WITHOUT ANY WARRANTY; without even the implied warranty of -  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the -  GNU General Public License for more details. - -  You should have received a copy of the GNU General Public License -  along with this program; if not, write to the Free Software -  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA - ***** END LICENSE BLOCK ***** -->
+<!ENTITY reloadallexclam "Reload All!">
+<!ENTITY changesettings "Einstellungen">
+<!ENTITY shortcuts "Tastaturkürzel">
+<!ENTITY appearance "Darstellung">
+<!ENTITY reloadalltabs "Alle Tabs neu laden">
+<!ENTITY reloadallapptabs "Alle App-Tabs neu laden">
+<!ENTITY selectionpopup "Pop-up für Tab-Auswahl öffnen">
+<!ENTITY reloadprevious "Neuladen aller beim letzten Mal neugeladener Tabs">
+<!ENTITY stopalltabs "Neuladen aller Tabs unterbrechen">
+<!ENTITY addtotabcontextmenu "&quot;Alle Tabs neu laden&quot; dem Tab-Kontextmenü hinzufügen">
+<!ENTITY addtotabcontextmenu2 "Alle &quot;Reload All!&quot;-Optionen dem Tab-Kontextmenu hinzufügen">
+<!ENTITY addreloadallapptabstotabcontextmenu "&quot;Alle App-Tabs neu laden&quot; dem Tab-Kontextmenü hinzufügen">
+<!ENTITY addreloadallsavedtotabcontextmenu "&quot;Neuladen aller beim letzten Mal neugeladener Tabs&quot; dem Tab-Kontextmenü hinzufügen">
+<!ENTITY addselectionpopuptotabcontextmenu "&quot;Tab-Auswahl öffnen&quot; dem Tab-Kontextmenü hinzufügen">
+<!ENTITY addstopalltotabcontextmenu "&quot;Neuladen aller Tabs unterbrechen&quot; dem Tab-Kontextmenü hinzufügen">
+<!ENTITY shortcuts-title "Eindeutige Tastaturkürzel zur Aktivierung der folgenden Möglichkeiten festlegen">
+<!ENTITY appearance-title "Nutzen Sie diese Option(en) um die Darstellung anzupassen">
+<!ENTITY keymodifier "Strg + Umschalt +">

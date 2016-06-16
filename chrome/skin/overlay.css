@@ -1,0 +1,39 @@
+/*
+ *
+ *  Reload All! Mozilla Firefox Addon - This is the core addon CSS file
+ *
+ *  Copyright (C) 2009  Dhruwat Bhagat <unitedronaldo@yahoo.com>
+ *
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ */
+#reloadall-button{
+	list-style-image: url("chrome://reloadall/skin/reloadalllogo.png");
+	  -moz-image-region: rect(0px 20px 24px 0px);
+}
+
+#reloadall-button:hover {
+  -moz-image-region: rect(24px 20px 48px 0px);  
+}
+
+#reloadall-button[disabled="true"] { 
+  -moz-image-region: rect(48px 20px 72px 0px);
+}
+
+#reloadall-button[disabled="true"]:hover:active { 
+  -moz-image-region: rect(96px 20px 120px 0px);
+}
+

@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!-- ***** BEGIN LICENSE BLOCK *****
+ -  Reload All! Mozilla Firefox Addon - This is the core addon XUL file
+ -  
+ -  Copyright (C) 2009  Dhruwat Bhagat <unitedronaldo@yahoo.com>
+ -
+ -
+ -  This program is free software; you can redistribute it and/or modify
+ -  it under the terms of the GNU General Public License as published by
+ -  the Free Software Foundation; either version 2 of the License, or
+ -  (at your option) any later version.
+ -
+ -  This program is distributed in the hope that it will be useful,
+ -  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ -  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ -  GNU General Public License for more details.
+ -
+ -  You should have received a copy of the GNU General Public License
+ -  along with this program; if not, write to the Free Software
+ -  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ - ***** END LICENSE BLOCK ***** -->
+<?xml-stylesheet href="chrome://reloadall/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://reloadall/locale/overlay.dtd">
+<overlay id="sample" 
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <script type="application/x-javascript" src="chrome://reloadall/content/reloadall.js"/>
+    <!-- Button -->
+    <toolbarpalette id="BrowserToolbarPalette">
+      <toolbarbutton id="reloadall-button" label="&reloadall;" type="menu-button" class="toolbarbutton-1 chromeclass-toolbar-additional" tooltiptext="&reloadall;" 
+		insertbefore="home-button" oncommand="reloadall.reloadAll(event);">
+        <menupopup id="reloadall-menupopup-toolbar">
+	  <menuitem id="reloadall-menuitem-toolbar" label="&selecttabs;" tooltiptext="&selecttabs;" oncommand="reloadall.openSelectionPopup();"/>
+	</menupopup>  
+      </toolbarbutton>
+      <!-- class="toolbarbutton-1 chromeclass-toolbar-additional" -->
+    </toolbarpalette>
+
+    <keyset>
+        <key id="reloadall-key" modifiers="control shift" key="" oncommand="reloadall.reloadAll(null);"/>
+        <key id="reloadallapptabs-key" modifiers="control shift" key="" oncommand="reloadall.reloadAllAppTabs(null);"/>		
+	<key id="selectionpopup-key" modifiers="control shift" key="" oncommand="reloadall.openSelectionPopup();"/>
+	<key id="reloadallsaved-key" modifiers="control shift" key="" oncommand="reloadall.reloadAllSaved();"/>
+	 <key id="stopall-key" modifiers="control shift" key="" oncommand="reloadall.stopAll();"/>
+    </keyset>
+    <!-- Menu -->
+    <menubar id="main-menubar">	
+      <menu id="tools-menu">
+	<menupopup id="menu_ToolsPopup">
+	  <menu id="reloadall-toolsmenu" label="Reload All" insertbefore="devToolsSeparator">
+	    <menupopup id="reloadall-menupopup">
+	      <menuitem id="reloadall-menuitem-reloadall" label="&reloadall;" key="reloadall-key" oncommand="reloadall.reloadAll(event);"/>
+		  <menuitem id="reloadall-menuitem-reloadallAppTabs" label="&reloadallapptabs;" key="reloadallapptabs-key" oncommand="reloadall.reloadAllAppTabs(event);"/>
+	      <menuitem id="reloadall-menuitem-selecttabs" label="&selecttabs;" key="selectionpopup-key" oncommand="reloadall.openSelectionPopup();"/>
+	      <menuitem id="reloadall-menuitem-stopall" label="&stopall;" key="stopall-key" oncommand="reloadall.stopAll();" />
+	      <menuitem id="reloadall-menuitem-reloadallsaved" label="&reloadalllastsaved;" key="reloadallsaved-key" oncommand="reloadall.reloadAllSaved();" />	     
+	    </menupopup>
+	  </menu>
+	</menupopup>
+      </menu>
+    </menubar>
+
+	<menuitem id="reloadall-menuitem-reloadall-context" label="&reloadall;" key="reloadall-key" oncommand="reloadall.reloadAll(event);"/>
+	<menuitem id="reloadall-menuitem-reloadall" label="&reloadallapptabs;" key="reloadallapptabs-key" oncommand="reloadall.reloadAllAppTabs(event);"/>	  
+	<menuitem id="reloadall-menuitem-selecttabs-context" label="&selecttabs;" key="selectionpopup-key" oncommand="reloadall.openSelectionPopup();"/>
+	<menuitem id="reloadall-menuitem-stopall-context" label="&stopall;" key="stopall-key" oncommand="reloadall.stopAll();" />
+
+</overlay>

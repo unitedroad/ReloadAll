@@ -1,0 +1,19 @@
+<!-- ***** BEGIN LICENSE BLOCK ***** -  Reload All! Mozilla Firefox Addon - This is the addon popup DTD file for ZH-CN locale -   -  Copyright (C) 2011  yfdyh000 - - -  This program is free software; you can redistribute it and/or modify -  it under the terms of the GNU General Public License as published by -  the Free Software Foundation; either version 2 of the License, or -  (at your option) any later version. - -  This program is distributed in the hope that it will be useful, -  but WITHOUT ANY WARRANTY; without even the implied warranty of -  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the -  GNU General Public License for more details. - -  You should have received a copy of the GNU General Public License -  along with this program; if not, write to the Free Software -  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA - ***** END LICENSE BLOCK ***** -->
+<!ENTITY reloadallexclam "Reload All!">
+<!ENTITY changesettings "更改设置">
+<!ENTITY shortcuts "快捷键">
+<!ENTITY appearance "外观">
+<!ENTITY reloadalltabs "重新载入所有标签页">
+<!ENTITY reloadallapptabs "重新载入所有应用标签页">
+<!ENTITY selectionpopup "打开弹出式的选择窗口">
+<!ENTITY reloadprevious "重新载入上次重载的标签页">
+<!ENTITY stopalltabs "停止所有标签页">
+<!ENTITY addtotabcontextmenu "添加所有 Reload All! 选项到标签页的右键菜单">
+<!ENTITY addtotabcontextmenu2 "添加所有 Reload All! 选项到标签页的右键菜单">
+<!ENTITY addreloadallapptabstotabcontextmenu "添加“重新载入所有应用标签页”选项到标签页的右键菜单">
+<!ENTITY addreloadallsavedtotabcontextmenu "添加“重新载入上次重载的标签页”选项到标签页的右键菜单">
+<!ENTITY addselectionpopuptotabcontextmenu "添加“弹出式的选择窗口”选项到标签页的右键菜单">
+<!ENTITY addstopalltotabcontextmenu "添加“停止所有标签页”选项到标签页的右键菜单">
+<!ENTITY shortcuts-title "请输入未被占用的快捷键以启用下列选项的快捷方式">
+<!ENTITY appearance-title "使用这些选项定制外观">
+<!ENTITY keymodifier "Ctrl + Shift +">

@@ -1,0 +1,40 @@
+<!-- ***** BEGIN LICENSE BLOCK *****
+ -  Reload All! Mozilla Firefox Addon - This is the addon popup DTD file for EN-GB locale
+ -  
+ -  Copyright (C) 2009  Dhruwat Bhagat <unitedronaldo@yahoo.com>
+ -
+ -
+ -  This program is free software; you can redistribute it and/or modify
+ -  it under the terms of the GNU General Public License as published by
+ -  the Free Software Foundation; either version 2 of the License, or
+ -  (at your option) any later version.
+ -
+ -  This program is distributed in the hope that it will be useful,
+ -  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ -  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ -  GNU General Public License for more details.
+ -
+ -  You should have received a copy of the GNU General Public License
+ -  along with this program; if not, write to the Free Software
+ -  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ - ***** END LICENSE BLOCK ***** -->
+ <!ENTITY reloadallexclam "Reload All!">
+ <!ENTITY changesettings "Change settings">
+ <!ENTITY shortcuts "Shortcuts">
+ <!ENTITY appearance "Appearance">
+ <!ENTITY reloadalltabs "Reload All Tabs">
+  <!ENTITY reloadallapptabs "Reload All App Tabs">
+ <!ENTITY selectionpopup "Open Selection Popup">
+ <!ENTITY reloadprevious "Reload Tabs reloaded last time">
+ <!ENTITY stopalltabs "Stop All Tabs">
+  <!ENTITY addtotabcontextmenu "Add all Reload All! Options to Tab context menu">
+  <!ENTITY addtotabcontextmenu2 "Add all Reload All! Options to Tab context menu">
+  <!ENTITY addreloadallapptabstotabcontextmenu "Add Reload All App tabs Option to Tab context menu">
+  <!ENTITY addreloadallsavedtotabcontextmenu "Add Reload All tabs last reloaded  Option to Tab context menu">
+  <!ENTITY addselectionpopuptotabcontextmenu "Add Selection Popup Option to Tab context menu">
+  <!ENTITY addstopalltotabcontextmenu "Add stop all tabs Option to Tab context menu">
+  <!ENTITY shortcuts-title "Enter Unique keystrings to enable shortcuts for the following options">
+  <!ENTITY appearance-title "Use these option(s) to customise the appearance">
+  <!ENTITY keymodifier "Control + Shift +">
+ 
+ 

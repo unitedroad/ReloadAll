@@ -1,0 +1,10 @@
+content	reloadall	jar:chrome/chrome.jar!/content/
+overlay chrome://browser/content/browser.xul chrome://reloadall/content/reloadall.xul
+locale	reloadall	en-GB	jar:chrome/chrome.jar!/locale/en-GB/
+locale	reloadall	en-US	jar:chrome/chrome.jar!/locale/en-US/
+locale	reloadall	de	jar:chrome/chrome.jar!/locale/de/
+locale	reloadall	sr	jar:chrome/chrome.jar!/locale/sr/
+locale	reloadall	zh-CN	jar:chrome/chrome.jar!/locale/zh-CN/
+skin	reloadall	classic/1.0	jar:chrome/chrome.jar!/skin/
+
+style	chrome://global/content/customizeToolbar.xul	chrome://reloadall/skin/overlay.css

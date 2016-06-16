@@ -1,0 +1,10 @@
+pref("extensions.reloadall.reloadall", "U");
+pref("extensions.reloadall.reloadallapptabs", "Q");
+pref("extensions.reloadall.reloadallpopup", "O");
+pref("extensions.reloadall.reloadallsaved", "E");
+pref("extensions.reloadall.stopall", "M");
+pref("extensions.reloadall.addtotabcontextmenu", false);
+pref("extensions.reloadall.addReloadAllAppTabstotabcontextmenu",false);
+pref("extensions.reloadall.addReloadAllSavedtotabcontextmenu",false);
+pref("extensions.reloadall.addSelectionPopuptotabcontextmenu",false);
+pref("extensions.reloadall.addStopAlltotabcontextmenu",false);

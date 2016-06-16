@@ -1,0 +1,229 @@
+<?xml version="1.0"?>
+<!-- ***** BEGIN LICENSE BLOCK *****
+ -  Reload All! Mozilla Firefox Addon - This is the addon popup XUL file
+ -  
+ -  Copyright (C) 2009  Dhruwat Bhagat <unitedronaldo@yahoo.com>
+ -
+ -
+ -  This program is free software; you can redistribute it and/or modify
+ -  it under the terms of the GNU General Public License as published by
+ -  the Free Software Foundation; either version 2 of the License, or
+ -  (at your option) any later version.
+ -
+ -  This program is distributed in the hope that it will be useful,
+ -  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ -  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ -  GNU General Public License for more details.
+ -
+ -  You should have received a copy of the GNU General Public License
+ -  along with this program; if not, write to the Free Software
+ -  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ - ***** END LICENSE BLOCK ***** -->
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://reloadall/skin/reloadallPopup.css" type="text/css"?>
+
+
+<!DOCTYPE window SYSTEM "chrome://reloadall/locale/reloadAllPopup.dtd">
+<window
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	title="&title;"
+	width="675" height="575"
+	id="reloadAll-Window"
+	class="selectlinks"
+	onload="selectionPopup.setView();"
+	persist="width height screenX screenY"
+	style="margin: 0px;">
+	<script type="application/x-javascript" src="chrome://reloadall/content/reloadall.js"/>
+  <script type="text/javascript">
+  <![CDATA[
+	var wm = Components.classes["@mozilla.org/appshell/window-mediator;1"].getService(Components.interfaces.nsIWindowMediator);
+	var mainWindow = wm.getMostRecentWindow("navigator:browser");
+	var tabbrowser = mainWindow.getBrowser();
+	var numTabs = tabbrowser.browsers.length;
+	var tabInfo = {};
+	var tree = document.getElementById('urlList');
+	function TabInfo(browser){
+		this.selected = "false";
+		this.url = browser.currentURI.spec;
+		this.description = browser.contentTitle;
+	}
+		
+	var treeView = {  
+        rowCount : numTabs,  
+	getCellText : function(row,column){ 
+	  var t = tabInfo[row];
+	  switch(column.id) {
+	    case 'selected':
+	      return this.getCellValue(row,column);
+	    case 'colURL':
+	      return t.url;
+	    case 'colDesc':
+	      return t.description;
+	  }
+        },
+	getCellValue : function(row,column){
+	  return tabInfo[row].selected;
+	},  
+	setCellValue : function(row,column,value){
+	  tabInfo[row].selected = value;
+	  if (column) {
+	    this.treebox.invalidateRow(row);
+	  }
+	},
+        setTree: function(treebox){ this.treebox = treebox; },
+	isEditable: function(idx, col) {
+	  // return (col.index == 0);
+	  return true;
+	},  
+        isContainer: function(row){ return false; },  
+        isSeparator: function(row){ return false; },  
+        isSorted: function(){ return false; },  
+        getLevel: function(row){ return 0; },  
+        getImageSrc: function(row,col){ return null; },  
+	getRowProperties: function(row,props){},  
+        getCellProperties: function(row,col,props){},  
+     	getColumnProperties: function(colid,col,props){}  
+ 	};  
+   
+ if (selectionPopup == null) 
+   var selectionPopup = {};
+ 
+ selectionPopup = {
+   TabInfo : function (browser){
+	this.selected = "false";
+	this.url = browser.currentURI.spec;
+	this.description = browser.contentTitle;
+    },
+   collectTabInfo : function () {
+	for(var index = 0; index < numTabs; index++) {
+		var tab = tabbrowser.getBrowserAtIndex(index);
+		tabInfo[index] = new TabInfo(tab);			
+	}
+   },
+   setView : function (){  
+     this.collectTabInfo();
+     var tree = document.getElementById('urlList')
+     tree.view = treeView;
+     
+   } , 
+  selectAll : function (){
+    var view = document.getElementById('urlList').view;
+    view.selection.selectAll();
+    /* Do we need this? */
+    document.getElementById('urlList').boxObject.invalidate();
+    // view.treebox.invalidate();
+    
+  },
+
+  invertSelection : function (){
+    var view = document.getElementById('urlList').view;
+    var selection = view.selection;
+ // selection.invertSelection();
+    for (var index = 0; index < numTabs; index++) {
+      selection.toggleSelect(index);
+     
+    }
+    /* Do we need this? */
+    document.getElementById('urlList').boxObject.invalidate();
+    // view.treebox.invalidate();
+  },
+  reloadAll : function (){
+    try {
+	    var tabsToSave = new Array();
+	    for (var index = 0; index < numTabs; index++) {
+	      if (tabInfo[index].selected == "true") {
+		tabbrowser.getBrowserAtIndex(index).reload();
+		tabsToSave.push(tabbrowser.getBrowserAtIndex(index));
+	      }
+	      window.opener.reloadall.setTabsLastReloaded(tabsToSave);
+	    }
+    } catch (exception) { // Dhruv: What if we lose window that called us,
+							// while we're trying to reload
+
+    }
+    window.close();
+  },
+  rangeAlert : function () {
+    var selection = document.getElementById('urlList').view.selection;
+    var start = new Object();
+    var end = new Object();
+    var numRanges = selection.getRangeCount();
+    var ranges = '';
+    for (var t = 0; t < numRanges; t++){
+      ranges = ranges + ' : ' + t;
+      selection.getRangeAt(t,start,end);
+      ranges = ranges + ' - start value : ' + start.value + ' end value : ' + end.value + '\n'; 
+
+    }
+    alert(ranges);
+  },
+  checkRow : function (value) {
+    var view = document.getElementById('urlList').view
+    var selection = view.selection;
+    var start = new Object();
+    var end = new Object();
+    var numRanges = selection.getRangeCount();
+    for (var r = 0; r < numRanges; r++){
+      selection.getRangeAt(r,start,end);
+      for (var i = start.value; i <= end.value; i++) {
+	view.setCellValue(i,null,value);
+      }
+    }
+    document.getElementById('urlList').boxObject.invalidate();
+    // view.treebox.invalidate();
+  },
+  toggleRow : function () {
+    var view = document.getElementById('urlList').view
+    var selection = view.selection;
+    var start = new Object();
+    var end = new Object();
+    var selected;
+    var numRanges = selection.getRangeCount();
+    for (var rangeNum = 0; rangeNum < numRanges; rangeNum++){
+      selection.getRangeAt(rangeNum,start,end);
+      for (var index = start.value; index <= end.value; index++) {
+	selected = tabInfo[index].selected;
+	selected = selected == 'true'? 'false' : 'true';
+	view.setCellValue(index,null,selected);
+      }
+    }
+    document.getElementById('urlList').boxObject.invalidate();
+   // view.treebox.invalidate();
+  },
+ };
+
+  ]]>
+  </script>
+  <popup id="reloadallPopup">
+    <menuitem class="menuitem-iconic" id="checkurl-menuitem" label="&checkselitems;" oncommand="selectionPopup.checkRow('true');" />
+    <menuitem class="menuitem-iconic" id="uncheckurl-menuitem" label="&uncheckselitems;" oncommand="selectionPopup.checkRow('false');" />
+    <menuitem class="menuitem-iconic" id="toggleurl-menuitem" label="&toggleselitems;" oncommand="selectionPopup.toggleRow();" />
+    <menuseparator id="msep1" />
+    <menuitem id="selectall-menuitem" class="menuitem-iconic" label="&selectall;" oncommand="selectionPopup.selectAll();" />
+    <menuitem id="invertselection-menuitem" class="menuitem-iconic" label="&invertselection;" oncommand="selectionPopup.invertSelection();" />
+    <menuseparator id="msep3" />
+  </popup>
+  <tree	id="urlList" flex="1"
+		context="reloadallPopup"
+		seltype="multiple" enableColumnDrag="true"
+		style="margin:0px;" editable="true"
+		autostretch="always">
+		<treecols>
+			<treecol id="selected" type="checkbox" fixed="true" editable="true" ignoreincolumnpicker="true" />
+			<treecol id="colURL" label="&url;" flex="35" crop="right" persist="width hidden" />
+			<splitter class="tree-splitter"/>
+			<treecol id="colDesc" label="&description;" flex="9" persist="width hidden" />
+			
+		</treecols>
+		<treechildren/>
+		  
+  </tree>
+  <vbox>
+    <hbox>
+      <button id="selectall" label="&selectall;" oncommand="selectionPopup.selectAll();"/>
+      <button id="toggleSelection" label="&invertselection;" oncommand="selectionPopup.invertSelection();"/>
+      <button id="ReloadAll" label="&reloadallexclam;" oncommand="selectionPopup.reloadAll();"/>
+    <!--  <button id="rangeAlert" label="rangeAlert" oncommand="selectionPopup.rangeAlert();"/>  -->
+    </hbox>
+  </vbox>
+</window>
